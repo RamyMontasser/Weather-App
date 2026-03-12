@@ -1,31 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/features/weather/domain/entity/weather_entity.dart';
 import 'package:weather_app/features/weather/presentation/widgets/info_card.dart';
 
 class SuccessBody extends StatelessWidget {
-  const SuccessBody({super.key});
+  const SuccessBody({super.key, required this.weatherEntity});
+  final WeatherEntity weatherEntity;
 
   @override
   Widget build(BuildContext context) {
+    DateTime dateTime = DateTime.now();
     return Column(
       children: [
         Text(
-          "Cairo",
+          weatherEntity.cityName,
           style: TextStyle(
             fontSize: 32,
             color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
         ),
-        Text("TODAY, 14 OCT", style: TextStyle(color: Colors.white54)),
+        Text("TODAY, ${dateTime.day}/${dateTime.month}", style: TextStyle(color: Colors.white54)),
 
-        Image.asset('', height: 180),
+        // Image.asset('', height: 180),
 
-        Text("28°", style: TextStyle(fontSize: 80, color: Colors.white)),
+        Text("${weatherEntity.temp.toInt()}°", style: TextStyle(fontSize: 80, color: Colors.white)),
         Text(
-          "Partly Cloudy",
+          weatherEntity.description,
           style: TextStyle(fontSize: 20, color: Colors.white),
         ),
-        Text("H:31°  L:22°", style: TextStyle(color: Colors.white54)),
+        Text("H:${weatherEntity.tempMax.toInt()}°  L:${weatherEntity.tempMin.toInt()}°", style: TextStyle(color: Colors.white54)),
 
         SizedBox(height: 40),
 
@@ -40,25 +43,25 @@ class SuccessBody extends StatelessWidget {
               InfoCard(
                 icon: "assets/Thermometer.svg",
                 title: "FEELS LIKE",
-                value: "30°C",
+                value: "${weatherEntity.feelsLike}°C",
                 // desc: "Similar to actual temp.",
               ),
               InfoCard(
                 icon: "assets/Droplets.svg",
                 title: "HUMIDITY",
-                value: "45%",
+                value: "${weatherEntity.humidity}%",
                 // desc: "The dew point is 15°",
               ),
               InfoCard(
                 icon: "assets/Wind.svg",
                 title: "WIND",
-                value: "12 km/h",
+                value: "${weatherEntity.windSpeed}km/h",
                 // desc: "Light breeze from NE.",
               ),
               InfoCard(
                 icon: "assets/SunDim.svg",
                 title: "Visibility",
-                value: "6",
+                value: "${weatherEntity.visibility}",
                 // desc: "High. Use protection.",
               ),
             ],

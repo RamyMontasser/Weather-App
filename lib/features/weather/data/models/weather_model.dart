@@ -3,7 +3,9 @@ import 'package:weather_app/features/weather/domain/entity/weather_entity.dart';
 class WeatherModel {
   final String cityName;
   final double temp;
-  final String condition;
+  final double tempMin;
+  final double tempMax;
+  final String description;
   final int humidity;
   final double windSpeed;
   final double feelsLike;
@@ -12,7 +14,9 @@ class WeatherModel {
   WeatherModel({
     required this.cityName,
     required this.temp,
-    required this.condition,
+    required this.tempMin,
+    required this.tempMax,
+    required this.description,
     required this.humidity,
     required this.windSpeed,
     required this.feelsLike,
@@ -23,7 +27,9 @@ class WeatherModel {
     return WeatherModel(
       cityName: json['name'],
       temp: json['main']['temp'].toDouble(),
-      condition: json['weather'][0]['main'],
+      tempMin: json['main']['temp_min'].toDouble(),
+      tempMax: json['main']['temp_max'].toDouble(),
+      description: json['weather'][0]['main'],
       humidity: json['main']['humidity'],
       windSpeed: json['wind']['speed'].toDouble(),
       feelsLike: json['main']['feels_like'].toDouble(),
@@ -35,11 +41,13 @@ class WeatherModel {
     return WeatherEntity(
       cityName: cityName,
       temp: temp,
-      condition: condition,
+      description: description,
       humidity: humidity,
       windSpeed: windSpeed,
       feelsLike: feelsLike,
-      visibility: visibility,
+      visibility: visibility, 
+      tempMin: tempMin, 
+      tempMax: tempMax,
     );
   }
 }

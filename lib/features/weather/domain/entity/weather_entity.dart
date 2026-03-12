@@ -1,7 +1,9 @@
 class WeatherEntity {
   final String cityName;
   final double temp;
-  final String condition;
+  final double tempMin;
+  final double tempMax;
+  final String description;
   final int humidity;
   final double windSpeed;
   final double feelsLike;
@@ -11,7 +13,9 @@ class WeatherEntity {
   WeatherEntity({
     required this.cityName,
     required this.temp,
-    required this.condition,
+    required this.tempMin,
+    required this.tempMax,
+    required this.description,
     required this.humidity,
     required this.windSpeed,
     required this.feelsLike,

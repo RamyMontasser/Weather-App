@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 class FailureBody extends StatelessWidget {
-  const FailureBody({super.key});
+  const FailureBody({super.key, required this.errMsg});
+  final String errMsg;
 
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      'fail',
+    return Text(
+      errMsg,
       style: TextStyle(color: Colors.white, fontSize: 25),
     );
   }
