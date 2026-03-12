@@ -16,7 +16,6 @@ class HomePage extends StatelessWidget {
       create: (context) => GetWeatherCubit(getIt<Repo>())..getCurrentWeather(),
       child: Scaffold(
         body: 
-        // HomePageBody(success: true)
         BlocBuilder<GetWeatherCubit, GetWeatherState>(
          builder: (context, state) {
                 bool isLoading =

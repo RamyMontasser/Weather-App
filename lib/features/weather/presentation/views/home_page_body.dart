@@ -16,7 +16,6 @@ class HomePageBody extends StatelessWidget {
   final String? errMsg;
   final WeatherEntity? weatherEntity;
 
-  // @override
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -37,7 +36,6 @@ class HomePageBody extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 decoration: BoxDecoration(
                   border: Border.all(
-                    // width: 0.1,
                     color: Colors.white.withValues(alpha: 0.1),
                   ),
                   color: Colors.white.withValues(alpha: 0.1),
@@ -54,8 +52,6 @@ class HomePageBody extends StatelessWidget {
                   },
                   decoration: InputDecoration(
                     icon: Icon(Icons.search, color: Colors.white),
-                    // hintText: city,
-                    // hintStyle: TextStyle(color: Colors.white54),
                     border: InputBorder.none,
                   ),
                 ),

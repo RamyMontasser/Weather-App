@@ -40,7 +40,6 @@ class InfoCard extends StatelessWidget {
             ),
           ),
           Spacer(),
-          // Text(desc, style: TextStyle(color: Colors.white70, fontSize: 11)),
         ],
       ),
     );

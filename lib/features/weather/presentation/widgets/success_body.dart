@@ -19,16 +19,25 @@ class SuccessBody extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        Text("TODAY, ${dateTime.day}/${dateTime.month}", style: TextStyle(color: Colors.white54)),
+        Text(
+          "TODAY, ${dateTime.day}/${dateTime.month}",
+          style: TextStyle(color: Colors.white54),
+        ),
 
-        // Image.asset('', height: 180),
+        SizedBox(height: 10),
 
-        Text("${weatherEntity.temp.toInt()}°", style: TextStyle(fontSize: 80, color: Colors.white)),
+        Text(
+          "${weatherEntity.temp.toInt()}°",
+          style: TextStyle(fontSize: 80, color: Colors.white),
+        ),
         Text(
           weatherEntity.description,
           style: TextStyle(fontSize: 20, color: Colors.white),
         ),
-        Text("H:${weatherEntity.tempMax.toInt()}°  L:${weatherEntity.tempMin.toInt()}°", style: TextStyle(color: Colors.white54)),
+        Text(
+          "H:${weatherEntity.tempMax.toInt()}°  L:${weatherEntity.tempMin.toInt()}°",
+          style: TextStyle(color: Colors.white54),
+        ),
 
         SizedBox(height: 40),
 
@@ -44,25 +53,21 @@ class SuccessBody extends StatelessWidget {
                 icon: "assets/Thermometer.svg",
                 title: "FEELS LIKE",
                 value: "${weatherEntity.feelsLike}°C",
-                // desc: "Similar to actual temp.",
               ),
               InfoCard(
                 icon: "assets/Droplets.svg",
                 title: "HUMIDITY",
                 value: "${weatherEntity.humidity}%",
-                // desc: "The dew point is 15°",
               ),
               InfoCard(
                 icon: "assets/Wind.svg",
                 title: "WIND",
                 value: "${weatherEntity.windSpeed}km/h",
-                // desc: "Light breeze from NE.",
               ),
               InfoCard(
                 icon: "assets/SunDim.svg",
                 title: "Visibility",
                 value: "${weatherEntity.visibility}",
-                // desc: "High. Use protection.",
               ),
             ],
           ),
